@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'cc2024.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'labelWiseDb',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'Mowli5576',
         'HOST': 'labelwisedb.c9m2ek4uql9s.us-east-1.rds.amazonaws.com',
