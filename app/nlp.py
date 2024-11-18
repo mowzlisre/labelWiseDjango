@@ -51,7 +51,7 @@ class NLPModel:
             r'http[s]?://\S+',  # Remove URLs
             r'[^\w\s]',  # Remove non-alphanumeric characters
         ]
-        
+
         print("Original text:", text)
         for pattern in unwanted_chars_patterns:
             text = re.sub(pattern, '', text)
@@ -71,4 +71,4 @@ class NLPModel:
         return predicted_labels
 
 # Initialize the NLPModel instance
-model = NLPModel("vectorizer2.pkl", "multioutput_classifier2.pkl")
+# model = NLPModel("vectorizer2.pkl", "multioutput_classifier2.pkl")
