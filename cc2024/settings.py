@@ -57,9 +57,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'cc2024.urls'
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Add your frontend's URL here
-]
 
 TEMPLATES = [
     {
