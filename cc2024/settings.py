@@ -85,11 +85,16 @@ WSGI_APPLICATION = 'cc2024.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'labelWiseDb',
+        'USER': 'postgres',
+        'PASSWORD': 'Mowli5576',
+        'HOST': 'labelwisedb.c9m2ek4uql9s.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
+# Mowli5576
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -140,3 +145,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
 }
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
