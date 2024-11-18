@@ -57,7 +57,7 @@ class AbstractInputAPIView(APIView):
 
         try:
             from app.nlp import labels
-            prediction = labels
+            prediction = random.sample(labels, 5)
             label_dict = {label: round(random.uniform(0.5, 30.0), 2) for label in prediction}
 
             total_score = sum(label_dict.values())
