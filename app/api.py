@@ -7,7 +7,7 @@ from rest_framework import status
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from app.nlp import model
+# from app.nlp import model
 from .models import Logs, LogsSerializer, User
 from datetime import datetime
 import json, random
