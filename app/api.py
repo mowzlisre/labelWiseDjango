@@ -7,7 +7,7 @@ from rest_framework import status
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import AllowAny, IsAuthenticated
-# from app.nlp import model
+from app.nlp import model
 from .models import Logs, LogsSerializer, User
 from datetime import datetime
 import json, random
@@ -56,8 +56,7 @@ class AbstractInputAPIView(APIView):
             return Response({"error": "Abstract is required"}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            from app.nlp import labels
-            prediction = random.sample(labels, 5)
+            prediction = model.preprocess_and_predict(abstract)
             label_dict = {label: round(random.uniform(0.5, 30.0), 2) for label in prediction}
 
             total_score = sum(label_dict.values())

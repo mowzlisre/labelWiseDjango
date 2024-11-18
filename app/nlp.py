@@ -71,4 +71,4 @@ class NLPModel:
         return predicted_labels
 
 # Initialize the NLPModel instance
-# model = NLPModel("vectorizer2.pkl", "multioutput_classifier2.pkl")
+model = NLPModel("vectorizer2.pkl", "multioutput_classifier2.pkl")
