@@ -7,9 +7,6 @@ import joblib
 from django.conf import settings
 import os
 # Download necessary NLTK resources
-nltk_data_path = "/home/ubuntu/nltk_data"
-os.makedirs(nltk_data_path, exist_ok=True)
-nltk.data.path.append(nltk_data_path)
 
 class NLPModel:
     def __init__(self, vectorizer_path, model_path):  # Corrected from _init_ to __init__
