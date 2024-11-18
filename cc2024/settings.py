@@ -65,6 +65,12 @@ CORS_ALLOWED_ORIGINS = [
     "https://mowzlisre.me"
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://54.161.151.76",
+    "https://main.dltjklqzhgv60.amplifyapp.com",
+    "https://mowzlisre.me",
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
