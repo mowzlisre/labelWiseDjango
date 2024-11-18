@@ -61,6 +61,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Your React app running locally
     "https://54.161.151.76",  # Your Apache server's public IP
+    "https://main.dltjklqzhgv60.amplifyapp.com"
 ]
 
 TEMPLATES = [
