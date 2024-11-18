@@ -56,7 +56,8 @@ class AbstractInputAPIView(APIView):
             return Response({"error": "Abstract is required"}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            prediction = model.preprocess_and_predict(abstract)
+            from app.nlp import labels
+            prediction = labels
             label_dict = {label: round(random.uniform(0.5, 30.0), 2) for label in prediction}
 
             total_score = sum(label_dict.values())

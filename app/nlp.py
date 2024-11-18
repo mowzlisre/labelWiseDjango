@@ -8,17 +8,7 @@ from django.conf import settings
 import os
 # Download necessary NLTK resources
 
-class NLPModel:
-    def __init__(self, vectorizer_path, model_path):  # Corrected from _init_ to __init__
-        # Load the vectorizer and model
-        vectorizer_path = os.path.join(settings.BASE_DIR, 'nlp_model', vectorizer_path)
-        model_path = os.path.join(settings.BASE_DIR, 'nlp_model', model_path)
-        self.vectorizer = joblib.load(vectorizer_path)
-        self.model = joblib.load(model_path)
-        self.stop_words = set(stopwords.words('english'))
-        self.stemmer = SnowballStemmer('english')
-        # Define your labels array here
-        self.labels = [
+labels = [
             "Visual Data in NLP", "Speech & Audio in NLP", "Sentiment Analysis", "Stylistic Analysis",
             "Multimodality", "Discourse & Pragmatics", "Semantic Text Processing", "Multilinguality",
             "Paraphrasing", "Text Generation", "Linguistics & Cognitive NLP", "Linguistic Theories",
@@ -40,6 +30,18 @@ class NLPModel:
             "Aspect-based Sentiment Analysis", "Semantic Search", "Data-to-Text Generation", "Text Normalization",
             "Chunking", "Document Retrieval", "Text Style Transfer"
         ]
+
+class NLPModel:
+    def __init__(self, vectorizer_path, model_path):  # Corrected from _init_ to __init__
+        # Load the vectorizer and model
+        vectorizer_path = os.path.join(settings.BASE_DIR, 'nlp_model', vectorizer_path)
+        model_path = os.path.join(settings.BASE_DIR, 'nlp_model', model_path)
+        self.vectorizer = joblib.load(vectorizer_path)
+        self.model = joblib.load(model_path)
+        self.stop_words = set(stopwords.words('english'))
+        self.stemmer = SnowballStemmer('english')
+        # Define your labels array here
+        self.labels = labels
 
     def preprocess_text(self, text):
         ''' Remove unwanted characters and patterns from the text. '''
